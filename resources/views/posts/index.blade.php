@@ -13,13 +13,7 @@
     <body>
         <h1>Blog Name</h1>
         <div class = 'posts'>
-            @foreach ($posts as $line)
-                <div class='post'>
-                    <h2 class='title'>
-                　　　　　　<a href="/posts/{{ $line->id }}">{{ $line->title }}</a>
-                　　</h2>
-                </div>
-            @endforeach
+            
         </div>
         <div class='paginate'>
             {{ $posts->links() }}
