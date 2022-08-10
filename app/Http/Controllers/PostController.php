@@ -41,6 +41,11 @@ class PostController extends Controller
         $update->fill($input_post)->save();
         return redirect('/posts/' . $update->id);
     }
+    public function delete(Post $delete)
+    {
+        $delete->delete();
+        return redirect('/');
+    }
 }
 
 

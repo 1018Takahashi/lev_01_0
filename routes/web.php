@@ -26,3 +26,6 @@ Route::get('/posts/{edit}/edit', 'PostController@edit');
 
 Route::put('/posts/{update}', 'PostController@update')
 ->where('update', '[0-9]+');
+
+Route::delete('/posts/{delete}', 'PostController@delete')
+->where('update', '[0-9]+');
