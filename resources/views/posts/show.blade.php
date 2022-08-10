@@ -17,6 +17,7 @@
             <div class="content__post">
                 <p class = "body">{{ $post->body }}</p> 
                 <p class = "updated_at">{{ $post->updated_at}}</p>
+                <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
             </div>
         </div>
         <div class="footer">
