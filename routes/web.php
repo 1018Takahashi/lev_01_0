@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@index');
 
-Route::get('/posts/{q}', 'PostController@show')
-->where('q', '[0-9]+');
+Route::get('/posts/{show}', 'PostController@show')
+->where('show', '[0-9]+');
 
 Route::get('/posts/create', 'PostController@create');
 
 Route::post('/posts', 'PostController@store');
 
-Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::get('/posts/{edit}/edit', 'PostController@edit');
 
-Route::put('/posts/{post}', 'PostController@update')
-->where('q', '[0-9]+');
+Route::put('/posts/{update}', 'PostController@update')
+->where('update', '[0-9]+');
