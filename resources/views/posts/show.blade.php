@@ -10,19 +10,31 @@
     </head>
     <body>
         <h1>Blog Name</h1>
-        <h2 class="title">
-            {{ $post->title }}
-        </h2>
+        
         <div class="content">
+            <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+            <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <button type = "button" onclick = "return deletePost(this)">delete</button> 
+            </form>
             <div class="content__post">
+                <h2 class="title">{{ $post->title }}</h2>
                 <p class = "body">{{ $post->body }}</p> 
                 <p class = "updated_at">{{ $post->updated_at}}</p>
-                <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
             </div>
         </div>
         <div class="footer">
             <a href="/">back</a>
         </div>
+        <script>
+            function deletePost(e){
+                'use strict';
+                if(confirm("削除すると復元できません。\n本当に削除しますか？")){
+                    document.getElementById("form_delete").submit();
+                }
+            }
+        </script>
     </body>
 </html>
 
