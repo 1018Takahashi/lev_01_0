@@ -13,9 +13,9 @@ class PostController extends Controller
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
     }
     
-    public function show(Post $q)
+    public function show(Post $show)
     {
-        return view('posts/show')->with(['post' => $q]);
+        return view('posts/show')->with(['post' => $show]);
     }
     
     public function create()
@@ -30,16 +30,16 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
-    public function edit(Post $post)
+    public function edit(Post $edit)
     {
-        return view('posts/edit')->with(['post' => $post]);
+        return view('posts/edit')->with(['post' => $edit]);
     }
     
-    public function update(PostRequest $request, Post $post)
+    public function update(PostRequest $request, Post $update)
     {
         $input_post = $request['post'];
-        $post->fill($input_post)->save();
-        return redirect('/posts/' . $post->id);
+        $update->fill($input_post)->save();
+        return redirect('/posts/' . $update->id);
     }
 }
 
