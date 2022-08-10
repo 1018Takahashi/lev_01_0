@@ -9,14 +9,14 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1 class="title">
+        <h1>Blog Name</h1>
+        <h2 class="title">
             {{ $post->title }}
-        </h1>
+        </h2>
         <div class="content">
             <div class="content__post">
-                <h3>本文</h3>
-                <p>{{ $post->body }}</p>   
-                <p>{{ $post->updated_at }}</p>
+                <p class = "body">{{ $post->body }}</p> 
+                <p class = "updated_at">{{ $post->updated_at}}</p>
             </div>
         </div>
         <div class="footer">
