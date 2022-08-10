@@ -13,7 +13,7 @@
             @foreach ($posts as $line)
                 <div class='post'>
                     <h2 class='title'>
-                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                        <a href="/posts/{{ $line->id }}">{{ $line->title }}</a>
                     </h2>
                 </div>
             @endforeach
