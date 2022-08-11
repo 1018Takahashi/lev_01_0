@@ -29,3 +29,5 @@ Route::put('/posts/{update}', 'PostController@update')
 
 Route::delete('/posts/{delete}', 'PostController@delete')
 ->where('update', '[0-9]+');
+
+Route::get('/categories/{category}', 'CategoryController@index');
