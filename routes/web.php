@@ -31,3 +31,7 @@ Route::delete('/posts/{delete}', 'PostController@delete')
 ->where('update', '[0-9]+');
 
 Route::get('/categories/{category}', 'CategoryController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
