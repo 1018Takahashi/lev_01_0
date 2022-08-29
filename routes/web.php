@@ -27,8 +27,6 @@ Route::group(['middleware' => ['auth']], function(){
     
     Route::put('/posts/{update}', 'PostController@update')->where('update', '[0-9]+');
     
-    Route::delete('/posts/{delete}', 'PostController@delete')->where('update', '[0-9]+');
-    
     Route::get('/categories/{category}', 'CategoryController@index');
 });
 
